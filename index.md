@@ -3,18 +3,18 @@ layout: workshop      # DON'T CHANGE THIS.
 # More detailed instructions (including how to fill these variables for an
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
-venue: "University of Nebraska-Lincoln "        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "TBD @ University of Nebraska-Lincoln City Campus"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
+venue: "University of Nebraska-Lincoln East Union "        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
+address: "1705 Arbor Dr, Lincoln, NE 68503"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "US"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "EN"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "40.820"        # decimal latitude of workshop venue (use https://www.latlong.net/)
-longitude: "-96.706"       # decimal longitude of the workshop venue (use https://www.latlong.net)
+latitude: "40.830257283261965"        # decimal latitude of workshop venue (use https://www.latlong.net/)
+longitude: "-96.66733305886099"       # decimal longitude of the workshop venue (use https://www.latlong.net)
 humandate: "May 29-30, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "12-5PM CST (5PM - 10PM UTC)"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2024-05-29      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2024-05-30        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Caughlin Bohn"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: []     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+helper: ["Ashton Graves", "Sam Albin", "Natasha Pavolikj", "Showmic Islam", "Tom Harvill"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["hcc-support@unl.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
@@ -194,7 +194,7 @@ Modify the block below if there are any special requirements.
   <strong>Requirements:</strong>
   {% if online == "false" %}
     Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) with an up-to-date web-browser.
   {% else %}
     Participants must have access to a computer with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
@@ -333,7 +333,7 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
+
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 {% if site.carpentry == "incubator" %}
@@ -351,7 +351,7 @@ change the value of `carpentry` to `incubator`.
 {% else %}
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
+{% endif %}{% endcomment %}
 
 <hr/>
 
@@ -387,8 +387,8 @@ of code below the Schedule `<h2>` header below with
 {% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
 {% elsif site.carpentry == "incubator" %}
-This workshop is teaching a lesson in [The Carpentries Incubator](https://carpentries-incubator.org/).
-Please check [the lesson homepage]({{ site.incubator_lesson_site }}) for a list of lesson sections and estimated timings.
+This workshop is teaching a lesson in <a href="https://carpentries-incubator.org">The Carpentries Incubator</a>.
+Please check the schedule below for a list of lesson sections and estimated timings.
 {% include custom-schedule.html %}
 {% endif %}
 
@@ -399,7 +399,7 @@ how one of these schedule tables is constructed.
 {% endcomment %}
 
 {% if site.pilot %}
-The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please [contact the workshop organisers](#contact) if you would like more information about the planned schedule.
+The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please <a href="#contact">Contact the workshop organisers</a> if you would like more information about the planned schedule.
 {% endif %}
 
 <hr/>
@@ -420,23 +420,16 @@ please preview your site before committing, and make sure to run
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in a
-  {% if site.carpentry == "swc" %}
-  Software Carpentry
-  {% elsif site.carpentry == "dc" %}
-  Data Carpentry
-  {% elsif site.carpentry == "lc" %}
-  Library Carpentry
-  {% endif %}
-  workshop,
-  you will need access to software as described below.
-  In addition, you will need an up-to-date web browser.
+  To participate in this workshop, you will need a laptop with up-to-date web browser.
 </p>
+
+{% comment %}
 <p>
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
+{% endcomment %}
 
 {% comment %}
 For online workshops, the section below provides:
@@ -457,6 +450,10 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
+{% comment %}
+Please check the "Setup" page of [the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow to obtain the software and data you will need to follow the lesson.
+{% endcomment %}
+
 {% if site.carpentry == "swc" %}
 {% include swc/setup.html %}
 {% elsif site.carpentry == "dc" %}
@@ -464,7 +461,5 @@ during the workshop.
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% elsif site.carpentry == "incubator" %}
-Please check the "Setup" page of
-[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
-to obtain the software and data you will need to follow the lesson.
+
 {% endif %}
